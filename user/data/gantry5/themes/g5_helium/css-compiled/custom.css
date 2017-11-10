@@ -309,7 +309,7 @@ hr {
 }
 /* line 251, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights-header .breadcrumbs {
-  margin: 0 0 30px 0;
+  margin: 0 0 15px 0;
   padding: 0;
   list-style: none;
   overflow: hidden;
@@ -318,7 +318,7 @@ hr {
 /* line 257, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights-header .breadcrumbs li {
   float: left;
-  margin: 0 0.5em 0 1em;
+  margin: 0 0.3em 0 1em;
 }
 /* line 260, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights-header .breadcrumbs li a {
@@ -331,6 +331,12 @@ hr {
   transition: 0s;
 }
 /* line 268, user/themes/g5_helium/scss/custom.scss */
+.g-content .insights-header .breadcrumbs li a .fa {
+  font-size: 1.3rem;
+  position: relative;
+  top: 3px;
+}
+/* line 273, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights-header .breadcrumbs li a::before {
   content: "";
   position: absolute;
@@ -341,7 +347,7 @@ hr {
   border-color: #f1f1f1 #f1f1f1 #f1f1f1 transparent;
   left: -1em;
 }
-/* line 278, user/themes/g5_helium/scss/custom.scss */
+/* line 283, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights-header .breadcrumbs li a::after {
   content: "";
   position: absolute;
@@ -352,52 +358,61 @@ hr {
   border-left: 1em solid #f1f1f1;
   right: -1em;
 }
-/* line 288, user/themes/g5_helium/scss/custom.scss */
-.g-content .insights-header .breadcrumbs li a:hover {
-  background: #312f38;
+/* line 294, user/themes/g5_helium/scss/custom.scss */
+.g-content .insights-header .breadcrumbs li:first-child {
+  margin-left: 0;
 }
-/* line 290, user/themes/g5_helium/scss/custom.scss */
-.g-content .insights-header .breadcrumbs li a:hover::before {
-  border-color: #312f38 #312f38 #312f38 transparent;
-}
-/* line 293, user/themes/g5_helium/scss/custom.scss */
-.g-content .insights-header .breadcrumbs li a:hover::after {
-  border-left-color: #312f38;
-}
-/* line 298, user/themes/g5_helium/scss/custom.scss */
-/* line 299, user/themes/g5_helium/scss/custom.scss */
+/* line 296, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights-header .breadcrumbs li:first-child a {
   border-radius: 6px 0 0 6px;
 }
-/* line 301, user/themes/g5_helium/scss/custom.scss */
+/* line 298, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights-header .breadcrumbs li:first-child a::before {
   position: initial;
 }
-/* line 309, user/themes/g5_helium/scss/custom.scss */
+/* line 303, user/themes/g5_helium/scss/custom.scss */
+/* line 304, user/themes/g5_helium/scss/custom.scss */
+.g-content .insights-header .breadcrumbs li:not(:last-child) a:hover {
+  background: #312f38;
+  color: white;
+}
+/* line 307, user/themes/g5_helium/scss/custom.scss */
+.g-content .insights-header .breadcrumbs li:not(:last-child) a:hover::before {
+  border-color: #312f38 #312f38 #312f38 transparent;
+}
 /* line 310, user/themes/g5_helium/scss/custom.scss */
-/* line 311, user/themes/g5_helium/scss/custom.scss */
-/* line 312, user/themes/g5_helium/scss/custom.scss */
+.g-content .insights-header .breadcrumbs li:not(:last-child) a:hover::after {
+  border-left-color: #312f38;
+}
+/* line 316, user/themes/g5_helium/scss/custom.scss */
+.g-content .insights-header .breadcrumbs:last-child {
+  margin: 0 0 30px 0;
+}
+/* line 321, user/themes/g5_helium/scss/custom.scss */
+/* line 322, user/themes/g5_helium/scss/custom.scss */
+/* line 323, user/themes/g5_helium/scss/custom.scss */
+/* line 324, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main > .header {
   background-color: #a6a6a6;
   border: 1px solid #f1f1f1;
 }
-/* line 315, user/themes/g5_helium/scss/custom.scss */
+/* line 327, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main > .header h3 {
   color: white;
   font-weight: bold;
   margin: 10px 15px;
 }
-/* line 321, user/themes/g5_helium/scss/custom.scss */
+/* line 333, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .container {
   background-color: #f1f1f1;
   border: 2px solid #f1f1f1;
 }
-/* line 324, user/themes/g5_helium/scss/custom.scss */
+/* line 336, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .container .header {
   margin: 10px 15px;
   color: #868686;
 }
-/* line 327, user/themes/g5_helium/scss/custom.scss */
+/* line 339, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .container .header select {
   min-width: 180px;
   margin: 0 0 10px 10px;
@@ -408,31 +423,31 @@ hr {
   font-size: small;
   box-shadow: 0 0 2px 2px rgba(100, 100, 100, 0.05);
 }
-/* line 337, user/themes/g5_helium/scss/custom.scss */
+/* line 349, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .container .header#insights_filters {
   text-align: right;
 }
-/* line 341, user/themes/g5_helium/scss/custom.scss */
-/* line 342, user/themes/g5_helium/scss/custom.scss */
+/* line 353, user/themes/g5_helium/scss/custom.scss */
+/* line 354, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .container .array-container .array {
   background-color: white;
   margin: 5px 2px 3px 2px;
   padding: 25px 10px;
   overflow: auto;
 }
-/* line 347, user/themes/g5_helium/scss/custom.scss */
+/* line 359, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .container .array-container .array .block-author {
   width: 150px;
   margin-top: 5px;
   float: left;
 }
-/* line 352, user/themes/g5_helium/scss/custom.scss */
+/* line 364, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .container .array-container .array .block-article {
   width: calc(100% - 150px);
   padding-left: 20px;
   float: left;
 }
-/* line 356, user/themes/g5_helium/scss/custom.scss */
+/* line 368, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .container .array-container .array .block-article button.taxonomy {
   margin-right: 5px;
   padding: 0 10px;
@@ -440,37 +455,37 @@ hr {
   color: white;
   font-size: 0.8rem;
 }
-/* line 362, user/themes/g5_helium/scss/custom.scss */
+/* line 374, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .container .array-container .array .block-article button.taxonomy.industry_group {
   background-color: #4f81bc;
 }
-/* line 365, user/themes/g5_helium/scss/custom.scss */
+/* line 377, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .container .array-container .array .block-article button.taxonomy.industry {
   background-color: #f59d00;
 }
-/* line 368, user/themes/g5_helium/scss/custom.scss */
+/* line 380, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .container .array-container .array .block-article button.taxonomy.company {
   background-color: #479947;
 }
-/* line 371, user/themes/g5_helium/scss/custom.scss */
+/* line 383, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .container .array-container .array .block-article button.taxonomy.university_degree {
   background-color: #dd3e81;
 }
-/* line 375, user/themes/g5_helium/scss/custom.scss */
+/* line 387, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .container .array-container .array .block-article .author-name {
   font-size: 1.5rem;
   margin: 10px 0;
 }
-/* line 379, user/themes/g5_helium/scss/custom.scss */
+/* line 391, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .container .array-container .array .block-article .author-title {
   font-size: 1.2rem;
   margin: 0;
 }
-/* line 383, user/themes/g5_helium/scss/custom.scss */
+/* line 395, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .container .array-container .array .block-article p {
   line-height: normal;
 }
-/* line 386, user/themes/g5_helium/scss/custom.scss */
+/* line 398, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .container .array-container .array .block-article button.read-more {
   width: 100%;
   background-color: #4f81bc;
@@ -479,31 +494,31 @@ hr {
   border-radius: 10px;
   padding: 5px;
 }
-/* line 397, user/themes/g5_helium/scss/custom.scss */
+/* line 409, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .container.insights-content {
   background-color: white;
   border: none;
   padding: 0;
 }
-/* line 401, user/themes/g5_helium/scss/custom.scss */
+/* line 413, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .container.insights-content > h1 {
   margin: 0;
 }
-/* line 404, user/themes/g5_helium/scss/custom.scss */
+/* line 416, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .container.insights-content > h3 {
   margin: 0.8rem 0 1.5rem 0;
 }
-/* line 407, user/themes/g5_helium/scss/custom.scss */
+/* line 419, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .container.insights-content .content {
   line-height: normal;
   text-align: justify;
 }
-/* line 413, user/themes/g5_helium/scss/custom.scss */
+/* line 425, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .pagination {
   text-align: center;
   margin: 30px 0 50px 0;
 }
-/* line 416, user/themes/g5_helium/scss/custom.scss */
+/* line 428, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .pagination button.pagination-button {
   width: 50px;
   height: 50px;
@@ -512,31 +527,31 @@ hr {
   color: #4f81bc;
   font-size: 1.4rem;
 }
-/* line 423, user/themes/g5_helium/scss/custom.scss */
+/* line 435, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .pagination button.pagination-button.active, .g-content .insights .g-block .main .pagination button.pagination-button.inactive {
   color: #bababa;
   cursor: default;
 }
-/* line 429, user/themes/g5_helium/scss/custom.scss */
+/* line 441, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .banner {
   margin: 20px 0;
 }
-/* line 431, user/themes/g5_helium/scss/custom.scss */
+/* line 443, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .banner .container {
   background-color: #f1f1f1;
   padding: 0 25px;
 }
-/* line 434, user/themes/g5_helium/scss/custom.scss */
+/* line 446, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .banner .container h1 {
   margin: 1rem 0;
   text-align: center;
   font-weight: normal;
 }
-/* line 439, user/themes/g5_helium/scss/custom.scss */
+/* line 451, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .banner .container p {
   text-align: center;
 }
-/* line 441, user/themes/g5_helium/scss/custom.scss */
+/* line 453, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block .main .banner .container p a {
   display: inline-block;
   min-width: 70%;
@@ -547,33 +562,55 @@ hr {
   color: white;
   font-size: 1.5rem;
 }
-/* line 455, user/themes/g5_helium/scss/custom.scss */
+/* line 466, user/themes/g5_helium/scss/custom.scss */
+.g-content .insights .g-block .main .share {
+  background-color: white;
+}
+/* line 468, user/themes/g5_helium/scss/custom.scss */
+.g-content .insights .g-block .main .share h4 {
+  color: #424753;
+}
+/* line 471, user/themes/g5_helium/scss/custom.scss */
+.g-content .insights .g-block .main .share .rrssb-buttons {
+  margin: 10px 0;
+}
+/* line 473, user/themes/g5_helium/scss/custom.scss */
+/* line 474, user/themes/g5_helium/scss/custom.scss */
+/* line 475, user/themes/g5_helium/scss/custom.scss */
+.g-content .insights .g-block .main .share .rrssb-buttons li a .rrssb-icon {
+  width: 17px !important;
+}
+/* line 478, user/themes/g5_helium/scss/custom.scss */
+.g-content .insights .g-block .main .share .rrssb-buttons li a .rrssb-text {
+  margin: 0 10px 0 10px;
+}
+/* line 486, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block.top-sources-container {
   padding-left: 20px;
 }
-/* line 457, user/themes/g5_helium/scss/custom.scss */
-/* line 458, user/themes/g5_helium/scss/custom.scss */
+/* line 488, user/themes/g5_helium/scss/custom.scss */
+/* line 489, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block.top-sources-container .main .container {
   padding-bottom: 80px;
 }
-/* line 460, user/themes/g5_helium/scss/custom.scss */
-/* line 461, user/themes/g5_helium/scss/custom.scss */
+/* line 491, user/themes/g5_helium/scss/custom.scss */
+/* line 492, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block.top-sources-container .main .container .header a {
   color: #868686;
 }
-/* line 468, user/themes/g5_helium/scss/custom.scss */
+/* line 499, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block.left-side-bar {
   padding-right: 20px;
 }
-/* line 470, user/themes/g5_helium/scss/custom.scss */
-/* line 471, user/themes/g5_helium/scss/custom.scss */
+/* line 501, user/themes/g5_helium/scss/custom.scss */
+/* line 502, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block.left-side-bar .main .container {
   padding: 10px;
   line-height: normal;
   word-wrap: break-word;
   font-size: 0.9rem;
 }
-/* line 476, user/themes/g5_helium/scss/custom.scss */
+/* line 507, user/themes/g5_helium/scss/custom.scss */
 .g-content .insights .g-block.left-side-bar .main .container p {
   margin: 0 0 1rem 0;
 }

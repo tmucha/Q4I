@@ -249,14 +249,14 @@ hr {
             font-weight: bold;
         }
         .breadcrumbs {
-            margin: 0 0 30px 0;
+            margin: 0 0 8px 0;
             padding: 0;
             list-style: none;
             overflow: hidden;
             width: 100%;
             li {
                 float: left;
-                margin: 0 .5em 0 1em;
+                margin: 0 0.3em 0 1em;
                 a {
                     background: #F1F1F1;
                     padding: 0.2em 1em;
@@ -265,6 +265,11 @@ hr {
                     color: #444;
                     position: relative;
                     transition: 0s;
+                    .fa {
+                        font-size: 1.3rem;
+                        position: relative;
+                        top: 3px;
+                    }
                     &::before {
                         content: "";
                         position: absolute;
@@ -285,8 +290,20 @@ hr {
                         border-left: 1em solid #F1F1F1;
                         right: -1em;
                     }
-                    &:hover {
+                }
+                &:first-child {
+                    margin-left: 0;
+                    a {
+                        border-radius: 6px 0 0 6px;
+                        &::before {
+                            position: initial;
+                        }
+                    }
+                }
+                &:not(:last-child) {
+                    a:hover {
                         background: #312F38;
+                        color: white;
                         &::before {
                             border-color: #312F38 #312F38 #312F38 transparent;
                         }
@@ -295,14 +312,9 @@ hr {
                         }
                     }
                 }
-                &:first-child {
-                    a {
-                        border-radius: 6px 0 0 6px;
-                        &::before {
-                            position: initial;
-                        }
-                    }
-                }
+            }
+            &:last-child {
+                margin: 0 0 30px 0;
             }
         }
     }
@@ -447,6 +459,25 @@ hr {
                                 border-radius: 10px;
                                 color: white;
                                 font-size: 1.5rem;
+                            }
+                        }
+                    }
+                }
+                .share {
+                    background-color: white;
+                    h4 {
+                        color: #424753;
+                    }
+                    .rrssb-buttons {
+                        margin: 10px 0;
+                        li {
+                            a {
+                                .rrssb-icon {
+                                    width: 17px !important;
+                                }
+                                .rrssb-text {
+                                    margin: 0 10px 0 10px;
+                                }
                             }
                         }
                     }

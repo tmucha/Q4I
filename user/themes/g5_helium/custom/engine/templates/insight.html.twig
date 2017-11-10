@@ -4,9 +4,33 @@
 
 <div class="g-grid insights-header">
 	<div class="g-block size-100">
-		<ol class="breadcrumbs" id="breadcrumbs-two">
-			<li><a href=""><i class="fa fa-home"></i></a></li><li><a href="">Insights</a></li><li><a href="">Insights</a></li><li><a href="">Insights</a></li>
-		</ol>
+		{% set loop_index = 0 %}
+		{% for industry_group in page.taxonomy.industry_group %}
+			{% set industry_group_post_title = '' %}
+			{% set industry_post_title = '' %}
+			{% set industry_group_post_route = '' %}
+			{% set industry_post_route = '' %}
+			<ol class="breadcrumbs" id="breadcrumbs-two">
+				<li><a href="{{ home_url }}"><i class="fa fa-home"></i></a></li>
+				<li><a href="{{ home_url }}/insights">Insights</a></li>
+				{% for industry_group_post in taxonomy.findTaxonomy({'tag': 'industry_group'}) %}
+					{% if industry_group_post.header.slug == industry_group %}
+						{% set industry_group_post_title = industry_group_post.header.title %}
+						{% set industry_group_post_route = industry_group_post.route %}
+					{% endif %}
+				{% endfor %}
+				<li><a href="{{ home_url ~ industry_group_post_route }}">{{ industry_group_post_title }}</a></li>
+				{% for industry_post in taxonomy.findTaxonomy({'tag': 'industry'}) %}
+					{% if (industry_post.header.slug == page.taxonomy.industry[loop_index]) %}
+						{% set industry_post_title = industry_post.header.title %}
+						{% set industry_post_route = (industry_group_post_route ~ '/' ~ industry_post.header.slug) %}
+					{% endif %}
+				{% endfor %}
+				<li><a href="{{ home_url ~ industry_post_route }}">{{ industry_post_title }}</a></li>
+				{% set loop_index = (loop_index + 1) %}
+				<li><a>{{ page.header.name }}</a></li>
+			</ol>
+		{% endfor %}
 	</div>
 </div>
 
@@ -14,8 +38,8 @@
 	<div class="g-block size-15 left-side-bar">
 		<div class="main">
 			<div>
-				<img src="{{ home_url ~ page.route ~ '/' ~ page.header.profile_photo }}" alt="{{ page.header.profile_photo }}"/>
-				<img src="{{ home_url ~ page.route ~ '/' ~ page.header.company_logo }}" alt="{{ page.header.company_logo }}"/>
+				<img src="{{ home_url ~ page.route ~ '/' ~ page.header.profile_photo }}"/>
+				<img src="{{ home_url ~ page.route ~ '/' ~ page.header.company_logo }}"/>
 			</div>
 			<div class="container">
 				<p>{{ page.header.personal_profile|raw }}</p>
