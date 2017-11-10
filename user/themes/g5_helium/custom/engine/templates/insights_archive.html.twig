@@ -1,0 +1,178 @@
+{% extends "partials/page.html.twig" %}
+
+{% block content %}
+
+<div class="g-grid insights-header">
+	<div class="g-block size-15"><div class="spacer"></div></div>
+	<div class="g-block size-65">
+		<h3>CAREER INSIGHTS FROM INDUSTRY INSIDERS</h3>
+	</div>
+	<div class="g-block size-20"><div class="spacer"></div></div>
+</div>
+
+<div class="g-grid insights">
+	<div class="g-block size-15"><div class="spacer"></div></div>
+	<div class="g-block size-65 filter-container">
+		<div class="main">
+			<div class="header"><h3>FILTER</h3>{# {{ industry_groups|dump }} #}</div>
+			<div class="container">
+				<script type="text/javascript">
+					function show_insights_filters(a) {
+						insights_filters = document.querySelectorAll('#insights_filters > .insights-filter');
+						for (var i = insights_filters.length - 1; i >= 0; i--) { insights_filters[i].classList.add('hidden'); }
+						document.querySelector('#insights_filters > .insights-filter.' + a).classList.remove('hidden');
+					}
+					function ready_insights_filters(a) {
+						anchor = document.createElement('a');
+						document.getElementById('insights_filters').appendChild(anchor);
+						anchor.appendChild(document.getElementById('insights_filters_submit'));
+						anchor.href = a;
+					}
+				</script>
+				<div class="header" id="insights_filters">
+					<select onchange="show_insights_filters(this.value)">
+						<option value="industry">Industry</option>
+						<option value="company">Company</option>
+						<option value="university-degree">University Degree</option>
+					</select>
+					<select class="insights-filter industry" onchange="ready_insights_filters(this.value)">
+						<option value="#" selected>Select Industry</option>
+						{% for industry_post in taxonomy.findTaxonomy({'tag': 'industry_group'}) %}
+							<option value="{{ home_url ~ '/insights/industry/' ~ industry_post.folder }}">{{ industry_post.header.title }}</option>
+						{% endfor %}
+					</select>
+					<select class="hidden insights-filter company">
+						<option value="#" selected>Select Company</option>
+					</select>
+					<select class="hidden insights-filter university-degree">
+						<option value="#" selected>Select University Degree</option>
+					</select>
+					<button id="insights_filters_submit">Apply Filter</button>
+				</div>
+
+				{% if page.collection|length > 0 %} {# id = 001 #}
+
+				{% set articles_per_page = 5 %}
+
+				{% set page_page_count_minus_one = (((page.collection|length) / articles_per_page)|round(0, 'ceil')) - 1 %}
+				{% set page_page_collection = [] %}
+				{% for i in 0..page_page_count_minus_one %}
+					{% set page_page_collection = page_page_collection|merge([ page.collection[(i * articles_per_page) : articles_per_page] ]) %}
+				{% endfor %}
+				{% set page_collection = page_page_collection[0] %}
+				{% set query_page = (uri.query('page') + 0) %}
+				{% set current_page = 1 %}
+				{% if (query_page > 0) and (query_page < (page_page_count_minus_one + 2)) %}
+					{% set page_collection = page_page_collection[(query_page - 1)] %}
+					{% set current_page = query_page %}
+				{% endif %}
+
+				<div class="array-container">
+					{% for page in page_collection %}
+ 					<div class="array">
+						<div class="block-author">
+							<div class="author">
+								<img src="{{ home_url ~ page.route ~ '/' ~ page.header.profile_photo }}" alt="{{ page.header.profile_photo }}"/>
+								<img src="{{ home_url ~ page.route ~ '/' ~ page.header.company_logo }}" alt="{{ page.header.company_logo }}"/>
+							</div>
+						</div>
+						<div class="block-article">
+							{% set loop_index = 0 %}
+							{% for industry_group in page.taxonomy.industry_group %}
+								{% set industry_group_post_title = '' %}
+								{% set industry_post_title = '' %}
+								{% for industry_group_post in taxonomy.findTaxonomy({'tag': 'industry_group'}) %}
+									{% if industry_group_post.header.slug == industry_group %}
+										{% set industry_group_post_title = industry_group_post.header.title|upper %}
+									{% endif %}
+								{% endfor %}
+								<button class="taxonomy industry_group">{{ industry_group_post_title }}</button>
+								{% for industry_post in taxonomy.findTaxonomy({'tag': 'industry'}) %}
+									{% if (industry_post.header.slug == page.taxonomy.industry[loop_index]) %}
+										{% set industry_post_title = industry_post.header.title|upper %}
+									{% endif %}
+								{% endfor %}
+								<button class="taxonomy industry">{{ industry_post_title }}</button>
+								{% set loop_index = (loop_index + 1) %}
+							{% endfor %}
+							<h1 class="author-name">{{ page.header.name }}</h1>
+							<h2 class="author-title">{{ page.header.title }}</h2>
+							<p>{{ page.content|truncate_html(300, true)|raw }}</p>
+							<a href="{{ home_url ~ page.route }}"><button class="read-more">OPEN THIS INSIGHT</button></a>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="pagination">
+				{% if current_page == 1 %}
+					<button class="pagination-button inactive">&laquo;</button>
+				{% else %}
+					<a href="{{ uri.url() ~ '/?page=' ~ (current_page - 1) }}"><button class="pagination-button">&laquo;</button></a>
+				{% endif %}
+				{% for i in 0..page_page_count_minus_one %}
+					{% if (page_page_count_minus_one < 5) or ((i < (current_page + 2)) and (i > (current_page - 4))) or ((i < 5) and (current_page < 4)) or ((i > (page_page_count_minus_one - 5)) and (current_page > (page_page_count_minus_one - 2))) %} {# if page count is 5 or less #}
+						{% if current_page == (i + 1) %}
+							<button class="pagination-button active">{{ i + 1 }}</button>
+						{% else %}
+							<a href="{{ uri.url() ~ '/?page=' ~ (i + 1) }}"><button class="pagination-button">{{ i + 1 }}</button></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+				{% if current_page == (page_page_count_minus_one + 1) %}
+					<button class="pagination-button inactive">&raquo;</button>
+				{% else %}
+					<a href="{{ uri.url() ~ '/?page=' ~ (current_page + 1) }}"><button class="pagination-button">&raquo;</button></a>
+				{% endif %}
+			</div>
+			<div class="banner">
+				<div class="container">
+					<h1>Would you like more career insights from this industry?</h1>
+					<p><a href="#">YES</a></p>
+				</div>
+			</div>
+			<div class="comments">
+				<div id="disqus_thread"></div>                         
+				<script>
+					var disqus_config = function () {
+					this.page.url = "http://questionsforinterviewer.com/{{ uri.route()|ltrim('/') }}";  // Replace PAGE_URL with your page's canonical URL variable
+					this.page.identifier = "{{ page.header.title|underscorize }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+					};
+
+					(function() { // DON'T EDIT BELOW THIS LINE
+					var d = document, s = d.createElement('script');
+					s.src = 'https://questionsforinterviewer.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+					})();
+				</script>
+				<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+				<span style="font-size: 12px; color: grey;">Image credits: <a href="http://www.freepik.com" target="_blank">designed by Freepik</a>.</span>
+			</div>
+			{% else %} {# id = 001 #}
+			</div>
+			<div class="banner">
+				<div class="container">
+					<h1>We are working hard to add insights from this and many other industries.</h1>
+					<h1>Vote for {{ page.header.title }} to get higher priority!</h1>
+					<p><a href="#">YES – PRIORITIZE THIS INDUSTRY</a></p>
+				</div>
+			</div>
+			{% endif %} {# id = 001 #}
+		</div>
+	</div>
+	<div class="g-block size-20 top-sources-container">
+		<div class="main">
+			<div class="header"><h3>TOP SOURCES</h3></div>
+			<div class="container">
+				<div class="header"><a href="#">SOME LINK</a></div>
+				<div class="header"><a href="#">SOME LINK</a></div>
+				<div class="header"><a href="#">SOME LINK</a></div>
+				<div class="header"><a href="#">SOME LINK</a></div>
+				<div class="header"><a href="#">SEE ALL</a></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

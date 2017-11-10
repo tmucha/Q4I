@@ -1,0 +1,3 @@
+meta: {  }
+head_bottom: "<link rel=\"stylesheet\" type=\"text/css\" href=\"//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css\" />\n<script src=\"//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js\"></script>\n<script>\nwindow.addEventListener(\"load\", function(){\nwindow.cookieconsent.initialise({\n  \"palette\": {\n    \"popup\": {\n      \"background\": \"#edeff5\",\n      \"text\": \"#838391\"\n    },\n    \"button\": {\n      \"background\": \"#4b81e8\"\n    }\n  },\n  \"theme\": \"edgeless\",\n  \"content\": {\n    \"href\": \"http://questionsforinterviewer.com/privacypolicy\"\n  }\n})});\n</script>"
+atoms: {  }

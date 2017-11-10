@@ -1,0 +1,6 @@
+preset: preset3
+header:
+  background-image: 'gantry-media://media/interview-waiting-line.jpg'
+  background-overlay: enabled
+intro:
+  background: '#ffffff'

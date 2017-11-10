@@ -1,0 +1,21 @@
+<div class="g-grid {{ page.header.cssclass }}">
+	<div class="g-block size-10">
+		<div class="spacer"></div>
+	</div>
+	<div class="g-block size-80 padding-side">
+
+		{% set image = page.media.images|first %}
+		
+		<div>
+		    {% if image %}
+		    	<h1>
+		        {{ image.html('','Questions to ask interviewer - the ultimate guide to asking questions in a job interview','header-image')|raw }}
+		        </h1>
+		    {% endif %}
+		</div>
+
+	</div>
+	<div class="g-block size-10">
+		<div class="spacer"></div>
+	</div>
+</div>

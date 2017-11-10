@@ -1,0 +1,41 @@
+<div class="g-grid {{ page.header.cssclass }}">
+	<div class="g-block size-10">
+		<div class="spacer"></div>
+	</div>
+	<div class="g-block size-80 padding-side">
+
+		<div class="chapter-heading please-share">
+			<h2>{{ page.header.chapter.heading }}</h2>
+			<div class="g-grid">
+				<div class="g-block size-50">
+					<p>I hope you're enjoying my in-depth guide to asking questions in a job interview. Share it with your family, friends and colleagues so that they can benefit from it too.</p>
+
+					{% set share_me = 'The Ultimate Guide to Asking Questions in a Job Interview is now freely available here http://questionsforinterviewer.com/questions-to-ask-interviewer @Q4Interviewer' %}
+					{% set share_page = 'http://questionsforinterviewer.com/questions-to-ask-interviewer' %}
+					{% set fb_share = 'http://questionsforinterviewer.com/questions-to-ask-interviewer' %}
+					{% set share_eventCategory = 'Ch-footer-CTA' %}
+					{% set share_eventLabelFrom = 'From-ch' ~ page.header.chapter.number ~ '-footer' %}
+					<p>{% include 'partials/socialbuttons.html.twig' with {'url' : page.url} %}
+						or if you have a website you can link to this guide <a href="share" style="color: blue;" onclick="ga('send','event','Ch-footer-CTA','Go-to-share-page','From-ch{{ page.header.chapter.number }}-footer-to-share-page')">here</a>.
+					</p>
+					<p>Awesome.</p>
+					<p>Now <strong>scroll down a bit</strong>, ask me a question or <strong>leave a comment</strong> and let me know what you think.</p>
+					{% if page.header.chapter.next %}
+							{{ image.html('',"Question for interviewer: #{p.header.article.title}",'article-image')|raw }}			
+						<p>Or continue reading...</p>
+						<a class="button" style="border-radius: 0.5rem; display: block; text-align: center;" href="{{ page.header.chapter.next }}" onclick="ga('send','event','Ch-footer-CTA','Go-to-next-ch','From-ch{{ page.header.chapter.number }}-footer-BTTN-to-next-ch')">CONTINUE TO THE NEXT CHAPTER >></a>
+		    		{% endif %}
+					{{ content|raw }}
+				</div>
+				<div class="g-block size-50">
+					{% set image = page.media.images|first %}
+					{{ image.html('','Share with your friends','chapter-image')|raw }}
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="g-block size-10">
+		<div class="spacer"></div>
+	</div>
+</div>

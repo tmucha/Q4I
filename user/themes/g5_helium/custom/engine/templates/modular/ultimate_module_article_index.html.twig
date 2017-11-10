@@ -1,0 +1,39 @@
+<div class="g-grid {{ page.header.cssclass }}">
+	<div class="g-block size-10">
+		<div class="spacer"></div>
+	</div>
+	<div class="g-block size-80 padding-side">
+
+		<div class="article-index">
+			<h2 style="padding-top: 3rem" id="index">Index of all questions:</h2>
+			<div class="g-grid">
+				<div class="g-block size-50">
+					<p>Below you can find a list of all questions included in chapters 2 through 7. I'd recommend that you check <a href="chapter-1">Chapter 1</a> and <a href="chapter-8">Chapter 8</a> as well. Especially, <a href="chapter-8">Chapter 8</a> gives some really practical hints, so remember to check it out as well.</p>
+				</div>
+				<div class="g-block size-50">
+					<div class="spacer"></div>
+				</div>
+			</div>
+			{% set ch_titles = {"ch2_article": "Questions about the job", "ch3_article": "Questions about the company", "ch4_article": "Questions about the requirements", "ch5_article": "Questions about the expectations", "ch6_article": "Questions about the people and culture", "ch7_article": "Questions about the next steps"} %}
+
+			{% for tag in ch_titles|keys %}
+				{% set collection = page.evaluate([{'@taxonomy.tag': tag}]) %}
+				{% set ordered_collection = collection.order('header.article.number','asc') %}
+
+					<h3 style="margin-top: 0px;">{{ ch_titles[tag] }}</h3>
+
+				{% for p in ordered_collection %}
+					{% set article_number = p.header.article.number %}
+					<span class="contents-link" style="display: block;" onclick="window.location.href = 'chapter-{{ p.header.chapter.number }}#article{{ article_number }}';ga('send','event','Index-of-questions','Go-to-article','From-index-to-article{{ article_number }}');">
+						<h4 style="margin-top: 0px;">Q# {{ p.header.article.number }}: {{ p.header.article.title }}</h4>
+					</span>
+				{% endfor %}
+			{% endfor %}
+			<span style="font-size: 12px; color: grey;">Image credits: <a href="http://www.freepik.com" target="_blank">designed by Freepik</a>.</span>
+		</div>
+
+	</div>
+	<div class="g-block size-10">
+		<div class="spacer"></div>
+	</div>
+</div>

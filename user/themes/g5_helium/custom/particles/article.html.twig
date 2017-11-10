@@ -1,0 +1,19 @@
+{% extends '@nucleus/partials/particle.html.twig' %}
+
+{% block particle %}
+<div class="article {{ particle.bg }}">
+	<div class="g-grid">
+		<div class="g-block size-33">
+			<img style="margin: 7%; max-width: 85%;" src="questions-to-ask-interviewer/{{ particle.image }}">
+		</div>
+		<div class="g-block size-67 article-text">
+			<h3>
+				<span class="{{ particle.highlight }}">[QUESTION #{{ particle.question.number }}]:</span>
+			</h3>
+			<h3>{{ particle.question.title }}</h3>
+		    {% set html = particle.twig ? gantry.theme.compile(particle.html) : particle.html %}
+		    {{ (particle.filter ? gantry.platform.filter(html) : html)|html|raw }}
+		</div>
+	</div>
+</div>
+{% endblock %}

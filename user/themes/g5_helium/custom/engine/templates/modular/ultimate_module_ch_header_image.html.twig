@@ -1,0 +1,33 @@
+<div class="g-grid {{ page.header.cssclass }}">
+	<div class="g-block size-10">
+		<div class="spacer"></div>
+	</div>
+	<div class="g-block size-80 padding-side">
+
+	{% set image = page.media.images|first %}
+
+		<div class="g-grid" style="margin-top: 1rem; margin-bottom: 1rem;">
+			<div style="margin-right: 1rem;">
+				    {% if image %}
+				        {{ image.html('','Questions to ask interviewer - the ultimate guide to asking questions in a job interview','ch-header-image')|raw }}
+				    {% endif %}
+				<div>
+				</div>
+			</div>
+			<div>
+				<h3 style="margin-bottom: 1rem; margin-top: 0px; line-height: normal;">Six ways to share this guide</h3>
+				<p><a href="share" onclick="ga('send','event','Ch-pre-header-CTA','Go-to-share-page','From-ch{{ page.header.chapter_number }}-pre-header-to-share-page')"><i class="fa fa-link" aria-hidden="true"></i> Link to this guide</a> or share on</p>
+				{% set share_me = 'The Ultimate Guide to Asking Questions in a Job Interview is now freely available here http://questionsforinterviewer.com/questions-to-ask-interviewer @Q4Interviewer' %}
+							{% set share_page = 'http://questionsforinterviewer.com/questions-to-ask-interviewer' %}
+							{% set fb_share = 'http://questionsforinterviewer.com/questions-to-ask-interviewer' %}
+							{% set share_eventCategory = 'Ch-pre-header-CTA' %}
+							{% set share_eventLabelFrom = 'From-ch' ~ page.header.chapter_number ~ '-pre-header' %}
+							{% include 'partials/socialbuttons.html.twig' with {'url' : page.url} %}
+			</div>
+		</div>
+
+	</div>
+	<div class="g-block size-10">
+		<div class="spacer"></div>
+	</div>
+</div>

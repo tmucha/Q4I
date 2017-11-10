@@ -1,0 +1,39 @@
+<?php
+return [
+    '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
+    'filename' => 'C:/xampp/htdocs/g5-dev/user/plugins/urlparamfilter/blueprints.yaml',
+    'modified' => 1510046462,
+    'data' => [
+        'name' => 'Url-Paramfilter',
+        'version' => 1.3,
+        'description' => 'Filter for manipulating URL-Parameters in Templates.',
+        'icon' => 'hashtag',
+        'author' => [
+            'name' => 'MaZderMind',
+            'email' => 'peter@mazdermind.de',
+            'url' => 'https://github.com/MaZderMind'
+        ],
+        'homepage' => 'https://github.com/MaZderMind/grav-plugin-urlparamfilter',
+        'keywords' => 'url, param, query, fragement, twig, template, filter, urlparamfilter"',
+        'bugs' => 'https://github.com/MaZderMind/grav-plugin-urlparamfilter/issues',
+        'license' => 'MIT',
+        'form' => [
+            'validation' => 'strict',
+            'fields' => [
+                'enabled' => [
+                    'type' => 'toggle',
+                    'label' => 'Plugin status',
+                    'highlight' => 1,
+                    'default' => 0,
+                    'options' => [
+                        1 => 'Enabled',
+                        0 => 'Disabled'
+                    ],
+                    'validate' => [
+                        'type' => 'bool'
+                    ]
+                ]
+            ]
+        ]
+    ]
+];

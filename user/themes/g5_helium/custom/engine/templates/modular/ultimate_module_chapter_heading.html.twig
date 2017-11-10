@@ -1,0 +1,26 @@
+<div class="g-grid {{ page.header.cssclass }}">
+	<div class="g-block size-10">
+		<div class="spacer"></div>
+	</div>
+	<div class="g-block size-80 padding-side">
+
+		<div class="chapter-heading">
+			<h3 id="chapter{{ page.header.chapter.number }}">Chapter: {{ page.header.chapter.number }}</h3>
+			<h2>{{ page.header.chapter.heading }}</h2>
+			<hr>
+			<div class="g-grid">
+				<div class="g-block size-50">
+					{{ content|raw }}
+				</div>
+				<div class="g-block size-50">
+					{% set image = page.media.images|first %}
+					{{ image.html('',"Chapter #{page.header.chapter.number}: Questions to ask during a job interview - #{page.header.chapter.heading}",'chapter-image')|raw }}
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="g-block size-10">
+		<div class="spacer"></div>
+	</div>
+</div>

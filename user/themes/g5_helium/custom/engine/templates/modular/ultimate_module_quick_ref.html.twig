@@ -1,0 +1,29 @@
+<div class="g-grid {{ page.header.cssclass }}">
+	<div class="g-block size-10">
+		<div class="spacer"></div>
+	</div>
+	<div class="g-block size-80 padding-side">
+
+		<div class="quick-ref">
+			<h2>Quick reference:</h2>
+		
+			{% for p in page.collection %}
+				
+				<a href="#article{{ p.header.article.number }}" style="color: #424753;" class="contents-link" onclick="ga('send','event','Quick-ref-Q-number','Go-to-article','From-ch{{ p.header.chapter.number }}-quick-ref-to-article{{ p.header.article.number }}')">
+					<h3 style="margin-top: 1.5rem; margin-bottom: 0px;">
+						<span class="{{ p.header.highlight }}">[QUESTION #{{ p.header.article.number }}]:</span>
+					</h3>
+				</a>
+				<a href="#article{{ p.header.article.number }}" class="contents-link" onclick="ga('send','event','Quick-ref-Q-title','Go-to-article','From-ch{{ p.header.chapter.number }}-quick-ref-to-article{{ p.header.article.number }}')">
+					<h4 style="margin-top: 0px; margin-bottom: 0px; line-height: 1.2;">{{ p.header.article.title }}</h4>
+				</a>
+
+			{% endfor %}
+
+		</div>
+
+	</div>
+	<div class="g-block size-10">
+		<div class="spacer"></div>
+	</div>
+</div>

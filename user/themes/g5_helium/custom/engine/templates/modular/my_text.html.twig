@@ -1,0 +1,19 @@
+{% set image = page.media.images|first %}
+
+<div class="g-grid ch2">
+	<div class="g-block size-19">
+		<div class="spacer"></div>
+	</div>
+		<div class="g-block size-62">
+			<div class="modular-row callout">
+			    {% if image %}
+			        {{ image.cropResize(500,500).html('','','align-'~page.header.image_align)|raw }}
+			    {% endif %}
+			    <p>This comes out from the TWIG</p>
+				{{ content|raw }}
+			</div>
+		</div>
+	<div class="g-block size-19">
+		<div class="spacer"></div>
+	</div>
+</div>

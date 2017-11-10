@@ -1,0 +1,16 @@
+enabled: '1'
+class: ''
+target: _parent
+items:
+  -
+    text: Home
+    link: /
+    name: Home
+  -
+    text: Blog
+    link: /blog
+    name: Blog
+  -
+    text: 'Contact us'
+    link: /contact
+    name: 'Contact us'

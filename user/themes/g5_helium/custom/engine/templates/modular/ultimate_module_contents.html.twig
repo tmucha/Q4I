@@ -1,0 +1,70 @@
+<div class="g-grid {{ page.header.cssclass }}">
+	<div class="g-block size-10">
+		<div class="spacer"></div>
+	</div>
+	<div class="g-block size-80 padding-side">
+
+		<div class="contents">
+			
+			<h2>Contents</h2>
+
+			{% set contents_count = 0 %}
+			{% for page in page.collection %}
+				{% set image_src = (page.media.images|first).html()|replace({'<img src="':'', '" />':''}) %} {# Get src of the first image that will be detected in the page folder #}
+
+				{% if (contents_count % 3) == 0 %} {# Output opening tags for a row of toc items (3 items max) #}
+				<div class="g-grid">
+					<div class="g-block size-10"><div class="spacer"></div></div>
+					<div class="g-block size-80">
+						<div class="g-grid">
+				{% endif %}
+
+							<div class="g-block size-33 link-container">
+								{% if (page.header.chapter.order < 900) %} {# Check if it's a chapter or not-(index, glossary, etc.) #}
+								<a class="contents-link" href="questions-to-ask-interviewer/chapter-{{ page.header.chapter.order }}" onclick="ga('send','event','TOC','Go-to-ch','From-TOC-to-ch{{ page.header.chapter.order }}')">
+									<img alt="{{ page.title }}: {{ page.header.chapter.title }}" class="contents-image" src="{{ image_src }}">
+									<h7>{{ page.title }}</h7>
+									<p>{{ page.header.chapter.title }}</p>
+								</a>
+								{% else %}
+								<a class="contents-link" href="questions-to-ask-interviewer/{{ page.title|lower }}" onclick="ga('send','event','TOC','Go-to-ch','From-TOC-to-{{ page.title|lower }}')">
+									<img alt="{{ page.header.chapter.title }}" class="contents-image" src="{{ image_src }}">
+									<h7>{{ page.title|upper }}</h7>
+									<p>{{ page.header.chapter.title }}</p>
+								</a>
+								{% endif %}
+							</div>
+
+				{% if (contents_count % 3) == 2 %} {# Output closing tags for a row of toc items (3 items max) #}
+						</div>
+					</div>
+					<div class="g-block size-10"><div class="spacer"></div></div>
+				</div>
+				{% endif %}
+
+				{% set contents_count = (contents_count + 1) %}
+			{% endfor %}
+
+			{# Close blocks if last row contains less than three items (flexibility) #}
+			{% if (contents_count % 3) != 2 %}
+						</div>
+					</div>
+					<div class="g-block size-10"><div class="spacer"></div></div>
+				</div>
+			{% endif %}
+
+		</div>
+
+		<div class="g-grid">
+			<div class="g-block size-20"><div class="spacer"></div></div>
+			<div class="g-block size-60">
+				<a class="button" style="border-radius: 0.5rem; display: block; text-align: center; font-size: 3rem; margin: 0px auto 100px;" href="questions-to-ask-interviewer/chapter-1" onclick="ga('send','event','TOC-footer-Bttn','Go-to-next-ch','From-TOC-BTTN-to-first-ch')">GET STARTED!</a>
+			</div>
+			<div class="g-block size-20"><div class="spacer"></div></div>
+		</div>
+
+	</div>
+	<div class="g-block size-10">
+		<div class="spacer"></div>
+	</div>
+</div>

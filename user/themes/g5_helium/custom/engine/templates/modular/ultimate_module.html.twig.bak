@@ -1,0 +1,343 @@
+<div class="g-grid {{ page.header.cssclass }}">
+	<div class="g-block size-10">
+		<div class="spacer"></div>
+	</div>
+		<div class="g-block size-80 padding-side">
+
+{% if page.header.type == "header_image" %}
+
+	{% set image = page.media.images|first %}
+	
+	<div>
+	    {% if image %}
+	    	<h1>
+	        {{ image.html('','Questions to ask interviewer - the ultimate guide to asking questions in a job interview','header-image')|raw }}
+	        </h1>
+	    {% endif %}
+	</div>
+
+
+{% elseif page.header.type == "ch_header_image" %}
+
+	{% set image = page.media.images|first %}
+
+		<div class="g-grid" style="margin-top: 1rem; margin-bottom: 1rem;">
+			<div style="margin-right: 1rem;">
+				    {% if image %}
+				        {{ image.html('','Questions to ask interviewer - the ultimate guide to asking questions in a job interview','ch-header-image')|raw }}
+				    {% endif %}
+				<div>
+				</div>
+			</div>
+			<div>
+				<h3 style="margin-bottom: 1rem; margin-top: 0px; line-height: normal;">Six ways to share this guide</h3>
+				<p><a href="share" onclick="ga('send','event','Ch-pre-header-CTA','Go-to-share-page','From-ch{{ page.header.chapter_number }}-pre-header-to-share-page')"><i class="fa fa-link" aria-hidden="true"></i> Link to this guide</a> or share on</p>
+				{% set share_me = 'The Ultimate Guide to Asking Questions in a Job Interview is now freely available here http://questionsforinterviewer.com/questions-to-ask-interviewer @Q4Interviewer' %}
+							{% set share_page = 'http://questionsforinterviewer.com/questions-to-ask-interviewer' %}
+							{% set fb_share = 'http://questionsforinterviewer.com/questions-to-ask-interviewer' %}
+							{% set share_eventCategory = 'Ch-pre-header-CTA' %}
+							{% set share_eventLabelFrom = 'From-ch' ~ page.header.chapter_number ~ '-pre-header' %}
+							{% include 'partials/socialbuttons.html.twig' with {'url' : page.url} %}
+			</div>
+		</div>
+
+{% elseif page.header.type == "header_text" %}
+
+    {{ content|raw }}
+
+{% elseif page.header.type == "contents" %}
+
+	<div class="contents">
+		<h2>Contents</h2>
+
+		<div class="g-grid">
+			<div class="g-block size-10"><div class="spacer"></div></div>
+			<div class="g-block size-80">
+				<div class="g-grid">
+					<div class="g-block size-33 link-container">
+						<a class="contents-link" href="questions-to-ask-interviewer/chapter-1" onclick="ga('send','event','TOC','Go-to-ch','From-TOC-to-ch1')">
+							<img alt="Chapter 1: Why ask questions in a job inteview" class="contents-image" src="questions-to-ask-interviewer/_contents/why-ask-circle.png">
+							<h7>CHAPTER 1</h7>
+							<p>Why Ask Questions in a Job Interview?</p>
+						</a>
+					</div>
+					<div class="g-block size-33 link-container">
+						<a class="contents-link" href="questions-to-ask-interviewer/chapter-2" onclick="ga('send','event','TOC','Go-to-ch','From-TOC-to-ch2')">
+							<img alt="Chapter 2: Asking about the job during an interview" class="contents-image" src="questions-to-ask-interviewer/_contents/job-circle.png">
+							<h7>CHAPTER 2</h7>
+							<p>Questions About the Job</p>
+						</a>
+					</div>
+					<div class="g-block size-33 link-container">
+						<a class="contents-link" href="questions-to-ask-interviewer/chapter-3" onclick="ga('send','event','TOC','Go-to-ch','From-TOC-to-ch3')">
+							<img alt="Chapter 3: Asking about the company during an interview" class="contents-image" src="questions-to-ask-interviewer/_contents/company-circle.png">
+							<h7>CHAPTER 3</h7>
+							<p>Questions About the Company</p>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="g-block size-10"><div class="spacer"></div></div>
+		</div>
+
+		<div class="g-grid">
+			<div class="g-block size-10"><div class="spacer"></div></div>
+			<div class="g-block size-80">
+				<div class="g-grid">
+					<div class="g-block size-33 link-container">
+						<a class="contents-link" href="questions-to-ask-interviewer/chapter-4" onclick="ga('send','event','TOC','Go-to-ch','From-TOC-to-ch4')">
+							<img alt="Chapter 4: Asking about job requirements during an interview" class="contents-image" src="questions-to-ask-interviewer/_contents/requirements-circle.png">
+							<h7>CHAPTER 4</h7>
+							<p>Questions About the Requirements</p>
+						</a>
+					</div>
+					<div class="g-block size-33 link-container">
+						<a class="contents-link" href="questions-to-ask-interviewer/chapter-5" onclick="ga('send','event','TOC','Go-to-ch','From-TOC-to-ch5')">
+							<img alt="Chapter 5: Asking about expectations during an interview" class="contents-image" src="questions-to-ask-interviewer/_contents/expectations-circle.png">
+							<h7>CHAPTER 5</h7>
+							<p>Questions About the Expectations</p>
+						</a>
+					</div>
+					<div class="g-block size-33 link-container">
+						<a class="contents-link" href="questions-to-ask-interviewer/chapter-6" onclick="ga('send','event','TOC','Go-to-ch','From-TOC-to-ch6')">
+							<img alt="Chapter 6: Asking about people and culture during an interview" class="contents-image" src="questions-to-ask-interviewer/_contents/culture-people-circle.png">
+							<h7>CHAPTER 6</h7>
+							<p>Questions About the People and Culture</p>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="g-block size-10"><div class="spacer"></div></div>
+		</div>
+		<div class="g-grid">
+			<div class="g-block size-10"><div class="spacer"></div></div>
+			<div class="g-block size-80">
+				<div class="g-grid">
+					<div class="g-block size-33 link-container">
+						<a class="contents-link" href="questions-to-ask-interviewer/chapter-7" onclick="ga('send','event','TOC','Go-to-ch','From-TOC-to-ch7')">
+							<img alt="Chapter 7: Asking about the next steps in the recruitment process" class="contents-image" src="questions-to-ask-interviewer/_contents/next-step-circle.png">
+							<h7>CHAPTER 7</h7>
+							<p>Questions About the Next Steps</p>
+						</a>
+					</div>
+					<div class="g-block size-33 link-container">
+						<a class="contents-link" href="questions-to-ask-interviewer/chapter-8" onclick="ga('send','event','TOC','Go-to-ch','From-TOC-to-ch8')">
+							<img alt="Chapter 8: How to ask questions during a job interview" class="contents-image" src="questions-to-ask-interviewer/_contents/how-to-ask-circle.png">
+							<h7>CHAPTER 8</h7>
+							<p>How to Ask Questions in an Interview</p>
+						</a>
+					</div>
+					<div class="g-block size-33 link-container">
+						<a class="contents-link" href="questions-to-ask-interviewer/index" onclick="ga('send','event','TOC','Go-to-ch','From-TOC-to-index')">
+							<img alt="Index of questions to ask at an interview" class="contents-image" src="questions-to-ask-interviewer/_contents/index.png">
+							<h7>INDEX</h7>
+							<p>Index of All Questions</p>
+						</a>
+					</div></div>
+				</div>
+			<div class="g-block size-10"><div class="spacer"></div></div>
+		</div>
+	</div>
+	<div class="g-grid">
+		<div class="g-block size-20"><div class="spacer"></div></div>
+		<div class="g-block size-60">
+			<a class="button" style="border-radius: 0.5rem; display: block; text-align: center; font-size: 3rem; margin: 0px auto 100px;" href="questions-to-ask-interviewer/chapter-1" onclick="ga('send','event','TOC-footer-Bttn','Go-to-next-ch','From-TOC-BTTN-to-first-ch')">GET STARTED!</a>
+		</div>
+		<div class="g-block size-20"><div class="spacer"></div></div>
+	</div>
+
+{% elseif page.header.type == "chapter_heading" %}
+	<div class="chapter-heading">
+		<h3 id="chapter{{ page.header.chapter.number }}">Chapter: {{ page.header.chapter.number }}</h3>
+		<h2>{{ page.header.chapter.heading }}</h2>
+		<hr>
+		<div class="g-grid">
+			<div class="g-block size-50">
+				{{ content|raw }}
+			</div>
+			<div class="g-block size-50">
+				{% set image = page.media.images|first %}
+				{{ image.html('',"Chapter #{page.header.chapter.number}: Questions to ask during a job interview - #{page.header.chapter.heading}",'chapter-image')|raw }}
+			</div>
+		</div>
+	</div>
+
+{% elseif page.header.type == "please_share" %}
+	<div class="chapter-heading please-share">
+		<h2>{{ page.header.chapter.heading }}</h2>
+		<div class="g-grid">
+			<div class="g-block size-50">
+				<p>I hope you're enjoying my in-depth guide to asking questions in a job interview. Share it with your family, friends and colleagues so that they can benefit from it too.</p>
+
+				{% set share_me = 'The Ultimate Guide to Asking Questions in a Job Interview is now freely available here http://questionsforinterviewer.com/questions-to-ask-interviewer @Q4Interviewer' %}
+				{% set share_page = 'http://questionsforinterviewer.com/questions-to-ask-interviewer' %}
+				{% set fb_share = 'http://questionsforinterviewer.com/questions-to-ask-interviewer' %}
+				{% set share_eventCategory = 'Ch-footer-CTA' %}
+				{% set share_eventLabelFrom = 'From-ch' ~ page.header.chapter.number ~ '-footer' %}
+				<p>{% include 'partials/socialbuttons.html.twig' with {'url' : page.url} %}
+					or if you have a website you can link to this guide <a href="share" style="color: blue;" onclick="ga('send','event','Ch-footer-CTA','Go-to-share-page','From-ch{{ page.header.chapter.number }}-footer-to-share-page')">here</a>.
+				</p>
+				<p>Awesome.</p>
+				<p>Now <strong>scroll down a bit</strong>, ask me a question or <strong>leave a comment</strong> and let me know what you think.</p>
+				{% if page.header.chapter.next %}
+						{{ image.html('',"Question for interviewer: #{p.header.article.title}",'article-image')|raw }}			
+					<p>Or continue reading...</p>
+					<a class="button" style="border-radius: 0.5rem; display: block; text-align: center;" href="{{ page.header.chapter.next }}" onclick="ga('send','event','Ch-footer-CTA','Go-to-next-ch','From-ch{{ page.header.chapter.number }}-footer-BTTN-to-next-ch')">CONTINUE TO THE NEXT CHAPTER >></a>
+	    		{% endif %}
+				{{ content|raw }}
+			</div>
+			<div class="g-block size-50">
+				{% set image = page.media.images|first %}
+				{{ image.html('','Share with your friends','chapter-image')|raw }}
+			</div>
+		</div>
+	</div>
+
+{% elseif page.header.type == "quick_ref" %}
+	
+	<div class="quick-ref">
+		<h2>Quick reference:</h2>
+	
+		{% for p in page.collection %}
+			<a href="#article{{ p.header.article.number }}" style="color: #424753;" class="contents-link" onclick="ga('send','event','Quick-ref-Q-number','Go-to-article','From-ch{{ p.header.chapter.number }}-quick-ref-to-article{{ p.header.article.number }}')">
+				<h3 style="margin-top: 1.5rem; margin-bottom: 0px;">
+					<span class="{{ p.header.highlight }}">[QUESTION #{{ p.header.article.number }}]:</span>
+				</h3>
+			</a>
+			<a href="#article{{ p.header.article.number }}" class="contents-link" onclick="ga('send','event','Quick-ref-Q-title','Go-to-article','From-ch{{ p.header.chapter.number }}-quick-ref-to-article{{ p.header.article.number }}')">
+				<h4 style="margin-top: 0px; margin-bottom: 0px; line-height: 1.2;">{{ p.header.article.title }}</h4>
+			</a>
+
+		{% endfor %}
+
+	</div>
+
+{% elseif page.header.type == "web_references" %}
+	
+	<div class="web-references">
+		{{ content|raw }}
+	</div>
+
+{% elseif page.header.type == "article_index" %}
+	<div class="article-index">
+		<h2 style="padding-top: 3rem" id="index">Index of all questions:</h2>
+		<div class="g-grid">
+			<div class="g-block size-50">
+				<p>Below you can find a list of all questions included in chapters 2 through 7. I'd recommend that you check <a href="chapter-1">Chapter 1</a> and <a href="chapter-8">Chapter 8</a> as well. Especially, <a href="chapter-8">Chapter 8</a> gives some really practical hints, so remember to check it out as well.</p>
+			</div>
+			<div class="g-block size-50">
+				<div class="spacer"></div>
+			</div>
+		</div>
+		{% set ch_titles = {"ch2_article": "Questions about the job", "ch3_article": "Questions about the company", "ch4_article": "Questions about the requirements", "ch5_article": "Questions about the expectations", "ch6_article": "Questions about the people and culture", "ch7_article": "Questions about the next steps"} %}
+
+		{% for tag in ch_titles|keys %}
+			{% set collection = page.evaluate([{'@taxonomy.tag': tag}]) %}
+			{% set ordered_collection = collection.order('header.article.number','asc') %}
+
+				<h3 style="margin-top: 0px;">{{ ch_titles[tag] }}</h3>
+
+			{% for p in ordered_collection %}
+				{% set article_number = p.header.article.number %}
+				<span class="contents-link" style="display: block;" onclick="window.location.href = 'chapter-{{ p.header.chapter.number }}#article{{ article_number }}';ga('send','event','Index-of-questions','Go-to-article','From-index-to-article{{ article_number }}');">
+					<h4 style="margin-top: 0px;">Q# {{ p.header.article.number }}: {{ p.header.article.title }}</h4>
+				</span>
+			{% endfor %}
+		{% endfor %}
+		<span style="font-size: 12px; color: grey;">Image credits: <a href="http://www.freepik.com" target="_blank">designed by Freepik</a>.</span>
+	</div>
+
+{% elseif page.header.type == "comments" %}
+	
+	<div class="comments">
+		<div id="disqus_thread"></div>                         
+			{{ content|raw }}
+	</div>
+
+{% elseif page.header.type == "articles" %}
+	{% for p in page.collection %}
+
+		{# Since there are articles without number, assign their ID based on taxonomy tag #}
+		{% if not p.header.article.number %}
+			{% set articleid = p.header.article.title %}
+		{% else %}
+			{% set articleid = p.header.article.number %}
+		{% endif %}
+
+		<div id="article{{ articleid }}" class="article {{ p.header.background }}">
+			<div class="g-grid">
+				<div class="g-block size-33">
+					{% if not p.header.article.expert == true %}
+						{% set image = p.media.images|first %}
+					{% else %}
+						{% set image = false %}
+				    {% endif %}
+				    {% if image %}
+						{{ image.html('',"Question for interviewer: #{p.header.article.title}",'article-image')|raw }}			
+						{% set image = false %}
+		    		{% endif %}
+				</div>
+				<div class="g-block size-67 article-text">
+				    {% if p.header.article.number %}
+						<h2>
+							<span class="{{ p.header.highlight }}">[QUESTION #{{ p.header.article.number }}]:</span>
+						</h3>
+						<h3>{{ p.header.article.title }}</h3>
+		    		{% endif %}
+		    		{% if p.header.article.expert == true %}
+						{% set image = p.media.images|first %}
+				    {% endif %}
+				    {% if image %}
+						{{ image.html('','{p.header.article.title}','')|raw }}			
+		    		{% endif %}			
+					{{ p.content|raw }}
+					<div class="g-grid">
+						<div class="g-block size-100">
+							<h4>Please, share with your friends!</h4>
+							{% set share_me = 'The Ultimate Guide to Asking Questions in a Job Interview is now freely available here http://questionsforinterviewer.com/questions-to-ask-interviewer @Q4Interviewer' %}
+							{% set share_page = 'http://questionsforinterviewer.com/questions-to-ask-interviewer' %}
+							{% set fb_share = 'http://questionsforinterviewer.com/questions-to-ask-interviewer' %}
+							{% set share_eventCategory = 'Article-share-CTA' %}
+							{% set share_eventLabelFrom = 'From-article-' ~ articleid|hyphenize %}
+							{% include 'partials/socialbuttons.html.twig' with {'url' : page.url} %}
+							<a href="share"  onclick="ga('send','event','Article-share-CTA','Go-to-share-page','From-article-{{ articleid|hyphenize }}-to-share-page')">or <i class="fa fa-link" aria-hidden="true"></i> link to this guide here.</a>
+						</div>
+						<div class="g-block size-50 internal-nav">
+							<a href="#chapter{{ p.header.chapter.number }}" onclick="ga('send','event','Article-mini-nav','Go-to-ch-start','From-article-{{ articleid|hyphenize }}-back-to-chapter{{ p.header.chapter.number }}-start')"><i class="fa fa-arrow-up" aria-hidden="true"></i> Start of the chapter</a></br>
+							{% if p.header.chapter.number < 8 %}
+								<a href="chapter-{{ p.header.chapter.number + 1 }}" onclick="ga('send','event','Article-mini-nav','Go-to-next-ch','From-chapter{{ p.header.chapter.number }}-article-{{ articleid|hyphenize }}-to-chapter{{ p.header.chapter.number + 1 }}')"><i class="fa fa-arrow-down" aria-hidden="true"></i> Next chapter</a></br>
+							{% endif %}
+						</div>
+						<div class="g-block size-50 align-right internal-nav">
+							<span class="contents-link" onclick="window.location.href = '/questions-to-ask-interviewer#contents';ga('send','event','Article-mini-nav','Go-to-TOC','From-chapter{{ p.header.chapter.number }}-article-{{ articleid|hyphenize }}-back-to-TOC');"><i class="fa fa-angle-double-up" aria-hidden="true"></i> Table of contents</span></br>
+							<a href="index" onclick="ga('send','event','Article-mini-nav','Go-to-index','From-article-{{ articleid|hyphenize }}-to-index')"><i class="fa fa-list-ol" aria-hidden="true"></i> Index of all questions</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+
+{% elseif page.header.type == "share_page" %}
+	
+	<div id="share-page" class="white">
+		<div class="g-grid">
+			<div class="g-block size-20"></div>
+			<div class="g-block size-80 article-text">
+				{{ content|raw }}
+			</div>
+		</div>
+	</div>
+
+{% else %}
+
+{% endif %}
+
+			</div>
+		<div class="g-block size-10">
+			<div class="spacer"></div>
+		</div>
+	</div>
+
+
+
